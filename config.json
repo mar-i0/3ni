@@ -1,0 +1,80 @@
+{
+  "3ni": {
+    "version": "1.0",
+    "description": "Sistema de almacenamiento seguro distribuido"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8443,
+    "ssl": false,
+    "ssl_certfile": "certs/server.crt",
+    "ssl_keyfile": "certs/server.key",
+    "timeout": 30,
+    "max_upload_size": 104857600
+  },
+  "storage": {
+    "ipfs": {
+      "enabled": true,
+      "api_url": "/ip4/127.0.0.1/tcp/5001",
+      "timeout": 30,
+      "description": "IPFS - Almacenamiento distribuido P2P"
+    },
+    "storj": {
+      "enabled": false,
+      "api_key": "",
+      "bucket_name": "3ni-secure",
+      "timeout": 60,
+      "description": "Storj - Almacenamiento descentralizado de objetos"
+    },
+    "bittorrent": {
+      "enabled": true,
+      "torrent_dir": "./torrents",
+      "tracker_url": "udp://tracker.openbittorrent.com:80/announce",
+      "timeout": 120,
+      "description": "BitTorrent - Distribución via DHT"
+    }
+  },
+  "networks": {
+    "tor": {
+      "enabled": true,
+      "socks_port": 9050,
+      "control_port": 9051,
+      "hidden_service_port": 8443,
+      "config_dir": "~/.tor/3ni",
+      "description": "Anonimato mediante TOR (.onion)"
+    },
+    "i2p": {
+      "enabled": true,
+      "port": 7654,
+      "router_console_port": 7657,
+      "config_dir": "~/.i2p/3ni",
+      "description": "Anonimato mediante I2P (.i2p)"
+    }
+  },
+  "encryption": {
+    "algorithm": "fernet",
+    "algorithm_details": "AES-128-CBC con HMAC-SHA256",
+    "key_derivation": "PBKDF2",
+    "hash_algorithm": "SHA-256",
+    "iterations": 480000,
+    "salt_length": 32,
+    "description": "Encriptación E2E con clave derivada del usuario"
+  },
+  "privacy": {
+    "collect_logs": false,
+    "collect_metrics": false,
+    "collect_ip": false,
+    "collect_timestamps": false,
+    "store_metadata": false,
+    "ephemeral_cache": true,
+    "cache_ttl": 3600,
+    "description": "Configuración de privacidad - Cero recopilación de datos"
+  },
+  "security": {
+    "require_password": true,
+    "min_password_length": 8,
+    "verify_integrity": true,
+    "enable_ssl": false,
+    "description": "Configuración de seguridad"
+  }
+}

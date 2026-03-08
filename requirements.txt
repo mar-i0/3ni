@@ -1,0 +1,15 @@
+cryptography==41.0.7
+fastapi==0.104.1
+uvicorn==0.24.0
+requests==2.31.0
+pydantic==2.5.0
+python-multipart==0.0.6
+pycryptodome==3.19.0
+ipfshttpclient==0.8.0a2
+aiofiles==23.2.1
+click==8.1.7
+torpy==1.1.20
+py-i2p==0.3.1
+libtorrent-rasterbar==2.0.10
+qrcode==7.4.2
+pillow==10.1.0
