@@ -505,3 +505,9 @@ Reporta vulnerabilidades de seguridad a:
 ```
 
 </div>
+
+---
+
+## 🙏 Agradecimientos
+
+Gracias a **d4c4s4** por las conversaciones e ideas en el coche.
